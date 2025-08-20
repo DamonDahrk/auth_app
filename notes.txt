@@ -19,3 +19,5 @@ app-> API backend route
 
  middleware (in src folder)
  
+ naming conventions hyper important!
+ 
