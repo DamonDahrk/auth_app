@@ -1,0 +1,21 @@
+tec stack:
+
+nextJs
+mongoDB
+mongoose
+nodemail
+react 
+express
+
+signup page 
+login page
+profile page 
+
+
+app-> API backend route
+ I
+ -> frontend  page 
+
+
+ middleware (in src folder)
+ 
