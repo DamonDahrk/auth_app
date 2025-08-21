@@ -8,24 +8,54 @@ import {axios} from "axios";
 
 
 
+
+
 export default function LoginPage(){
     const [user, setUser] = React.useState({
         email: "",
-        password: "",
-        username: "",
+        password: ""
+        
     })
 
-    const onSignup = async () => {
+    const onLogin = async () => {
 
     }
 
-    //anything that will to db uses async
+    }
 
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold">Login</h1>
+      <hr />
 
+<label htmlFor="email">email</label>
+<input
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+  id="email"
+  type="text"
+  value={user.email}
+  onChange={(e) => setUser({ ...user, email: e.target.value })}
+  placeholder="email"
+/>
+<label htmlFor="password">password</label>
+<input
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+  id="password"
+  type="password"
+  value={user.password}
+  onChange={(e) => setUser({ ...user, password: e.target.value })}
+  placeholder="password"
+/>
 
-    return(
-        <div className="flex items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold">Login </h1>
-        </div>
+<button
+  onClick={onSignup}
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+>
+  Login here
+</button>
+<Link href="/signup">Visit Sign Up page</Link>
+
+</div>
     )
-}
+
+  }
