@@ -1,11 +1,66 @@
-import React from 'react'
+"use client";  //you can use any front end framework with this, useffect usestate (BROKEN)
+import Link from "next/link";
+import React from "react"; 
+import {useRouter} from "next/navigation";
+import {axios} from "axios";
 
-export default function SignUpPage() {
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold">Sign Up</h1>
-    </div>
-  )
-}
 
- 
+
+
+
+
+
+export default function SignUpPage(){
+    const [user, setUser] = React.useState({
+        email: "",
+        password: "",
+        username: "",
+    })
+
+    const onSignup = async () => {
+
+    }
+
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold">Sign Up</h1>
+      <hr />
+<label htmlFor="username">username</label>
+<input
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+  id="username"
+  type="text"
+  value={user.username}
+  onChange={(e) => setUser({ ...user, username: e.target.value })}
+  placeholder="username"
+/>
+<label htmlFor="password">password</label>
+<input
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+  id="password"
+  type="password"
+  value={user.password}
+  onChange={(e) => setUser({ ...user, password: e.target.value })}
+  placeholder="password"
+/>
+<label htmlFor="email">email</label>
+<input
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+  id="email"
+  type="text"
+  value={user.email}
+  onChange={(e) => setUser({ ...user, email: e.target.value })}
+  placeholder="email"
+/>
+<button
+  onClick={onSignup}
+  className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+>
+  Signup here
+</button>
+<Link href="/login">Visit login page</Link>
+
+</div>
+    )
+
+  }
