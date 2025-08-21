@@ -10,4 +10,4 @@ export default function UserProfile({ params }: any) {
   )
 }
  //SOMETHING
- 
+ //TODO: Add user profile details here
