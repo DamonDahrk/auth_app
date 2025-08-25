@@ -21,7 +21,7 @@ export default function LoginPage(){
 
     }
 
-    }
+    
 
     return (
       <div className="flex flex-col items-center justify-center h-screen">
@@ -48,7 +48,7 @@ export default function LoginPage(){
 />
 
 <button
-  onClick={onSignup}
+  onClick={onLogin}
   className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
 >
   Login here

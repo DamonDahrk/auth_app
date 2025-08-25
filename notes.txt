@@ -21,3 +21,13 @@ app-> API backend route
  
  naming conventions hyper important!
  
+Next.js streamlines routing by using folder structure and naming conventions: place backend route files as route.ts/js inside an api directory, and frontend pages as page.tsx.
+
+This eliminates the need for explicit route configuration; Next.js automatically understands and maps routes based on file and folder names, reducing boilerplate and manual redirects.
+
+The tradeoff is stricter adherence to naming conventions and file structure, but overall, it increases productivity and maintains cleaner code.
+
+Unlike Express, which is centered entirely around server routing, Next.js abstracts much of the routing logic, allowing you to focus on building features rather than managing the server.
+
+A salt value is a random string of data that is added to a password before it is hashed by a cryptographic hash function. Salting ensures that even if two users have the same password, their hashes will be different because each will have a unique salt added to the password before hashing.
+
