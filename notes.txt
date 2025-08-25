@@ -31,3 +31,4 @@ Unlike Express, which is centered entirely around server routing, Next.js abstra
 
 A salt value is a random string of data that is added to a password before it is hashed by a cryptographic hash function. Salting ensures that even if two users have the same password, their hashes will be different because each will have a unique salt added to the password before hashing.
 
+lol
