@@ -2,7 +2,9 @@
 import Link from "next/link";
 import React, {useEffect} from "react"; 
 import {useRouter} from "next/navigation";
-import {axios} from "axios";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 
 
 
@@ -21,7 +23,28 @@ export default function SignUpPage(){
     const [buttonDisabled, setButtonDisabled] = React.
     useState(false);
 
+    const [loading, setLoading] = React.useState(false);
+
+
     const onSignup = async () => {
+      try{
+        setLoading(true);
+        // Set loading state to true to indicate the signup process has started
+        const response = await axios.post("/api/users/signup", user);
+        //JSON conversions not needed with axios, it does it for us
+        // It returns a promise that resolves to the response from the server.
+
+        console.log("Signup successful", response.data);
+        router.push("/login");
+        // Redirect the user to the login page upon successful signup
+      } catch(error:any) {
+        console.log("Signup failed", error.message); 
+        toast.error(error.message);
+        // Display a toast notification with the error message to inform the user about the failure
+
+      } finally {
+        setLoading(false);
+      }
 
     }
 
@@ -37,7 +60,7 @@ export default function SignUpPage(){
 
     return (
       <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold">Sign Up</h1>
+        <h1 className="text-4xl font-bold">{loading ? "Processing.." : "Signup"}</h1>
       <hr />
 <label htmlFor="username">username</label>
 <input
