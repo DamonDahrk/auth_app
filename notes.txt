@@ -32,3 +32,5 @@ Unlike Express, which is centered entirely around server routing, Next.js abstra
 A salt value is a random string of data that is added to a password before it is hashed by a cryptographic hash function. Salting ensures that even if two users have the same password, their hashes will be different because each will have a unique salt added to the password before hashing.
 
 A toast in web development is a small, temporary, non-intrusive notification message that appears on the screen to provide feedback to users
+
+The cookie is automatically sent with subsequent requests to the server, allowing the backend to authenticate the user by verifying this token without requiring the user to log in again.
